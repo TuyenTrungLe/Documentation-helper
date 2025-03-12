@@ -1,5 +1,6 @@
 from dotenv import load_dotenv
 from langchain_openai import OpenAIEmbeddings
+
 load_dotenv()
 
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -8,6 +9,7 @@ from langchain_pinecone import PineconeVectorStore
 from langchain_openai import AzureOpenAIEmbeddings
 
 import os
+
 # Ensure the `openai` library is installed for AzureOpenAIEmbeddings
 embeddings = AzureOpenAIEmbeddings(
     api_key=os.getenv("AZURE_OPENAI_API_KEY"),
@@ -15,8 +17,12 @@ embeddings = AzureOpenAIEmbeddings(
     model="text-embedding-ada-002",
 )
 
+
 def ingest_docs():
-    loader = ReadTheDocsLoader("langchain-docs/api.python.langchain.com/en/latest", encoding="ISO-8859-1",)
+    loader = ReadTheDocsLoader(
+        "langchain-docs/api.python.langchain.com/en/latest",
+        encoding="ISO-8859-1",
+    )
 
     raw_documents = loader.load()
     print(f"loaded {len(raw_documents)} documents")
