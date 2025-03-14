@@ -9,7 +9,6 @@ beautifulsoup4 = "*"
 black = "*"
 tiktoken = "*"
 openai = "*"
-pinecone-client = "*"
 unstructured = "*"
 nltk = "*"
 fastapi = "*"
@@ -20,9 +19,7 @@ streamlit-chat = "*"
 tqdm = "*"
 langchain-pinecone = "*"
 langchain-openai = "*"
+pinecone-client = "==2.2.1"
+pinecone = "*"
 
 [dev-packages]
-
-#[requires]
-#python_version = "3.11"
-#python_full_version = "3.11.0"
